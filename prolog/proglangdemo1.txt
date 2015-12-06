@@ -1,0 +1,61 @@
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 7.2.3)
+Copyright (c) 1990-2015 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+1 ?- consult('c:/users/ben/prolog/proglang.pro').
+true.
+
+2 ?- language(pascal).
+false.
+
+3 ?- language(prolog).
+true.
+
+4 ?- language(X).
+X = smalltalk .
+
+5 ?- language(L).
+L = smalltalk ;
+L = lisp ;
+L = prolog.
+
+6 ?- language(Language),write(Language),nl,fail.
+smalltalk
+lisp
+prolog
+false.
+
+7 ?- essence(lisp,DT,CF).
+DT = lists,
+CF = 'recursive functions'.
+
+8 ?- essence(prolog,DT,_).
+DT = relations.
+
+9 ?- essence(prolog,_,CF).
+CF = 'logical inferencing'.
+
+10 ?- essence(prolog,DT,_).
+DT = relations.
+
+11 ?- essence(prolog,_,CF).
+CF = 'logical inferencing'.
+
+12 ?- essence(L,objects,_).
+L = smalltalk.
+
+13 ?- history(lisp,I,_).
+I = inventor('John McCarthy').
+
+14 ?- history(lisp,inventor(Name),_).
+Name = 'John McCarthy'.
+
+15 ?- history(_,inventor(N),_),write(N),nl,fail.
+Alan Kay
+John McCarthy
+Alan Colmeraur
+false.

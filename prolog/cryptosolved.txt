@@ -1,0 +1,29 @@
+Problem: numbers = {12,10,2,11,12} and goal = 13
+Solution: ((((12+12)/2)+11)-10)
+
+Problem: numbers = {14,4,6,5,11} and goal = 14
+Solution: ((((6+5)-11)*4)+14)
+
+Problem: numbers = {8,14,0,5,4} and goal = 7
+Solution: ((14*0)+(8-(5-4)))
+
+Problem: numbers = {10,6,15,3,12} and goal = 7
+Solution: No Solution
+
+Problem: numbers = {8,0,11,0,9} and goal = 6
+Solution: (((8-(11-9))+0)+0)
+
+Problem: numbers = {11,9,11,6,13} and goal = 14
+Solution:No Solution
+
+Problem: numbers = {1,13,2,13,3} and goal = 2
+Solution: (((1+3)*(13-13))+2)
+
+Problem: numbers = {6,2,15,0,6} and goal = 4
+Solution: (((15+6)*0)+(6-2))
+
+Problem: numbers = {7,0,7,14,1} and goal = 5
+Solution: No Solution
+
+Problem: numbers = {4,1,6,15,14} and goal = 8
+Solution: No Solution

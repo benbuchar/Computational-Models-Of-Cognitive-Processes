@@ -1,0 +1,53 @@
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 7.2.3)
+Copyright (c) 1990-2015 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+1 ?- consult('C:/users/ben/prolog/sotcknowledgebase.pro').
+Warning: c:/users/ben/prolog/sotcknowledgebase.pro:17:
+        Singleton variables: [Name4]
+true.
+
+2 ?- colossus(Name,_,_,_).
+Name = valus ;
+Name = quadratus ;
+Name = phalanx ;
+Name = malus.
+
+3 ?- colossus(Name,_,_,_),write(Name),nl,fail.
+valus
+quadratus
+phalanx
+malus
+false.
+
+4 ?- colossus(Name,yes,_,_).
+Name = quadratus ;
+Name = phalanx.
+
+5 ?- colossus(Name,no,_,_).
+Name = valus ;
+Name = malus.
+
+6 ?- isTallerThan(Name1,Name2),colossus(Name1,yes,_,_),colossus(Name2,yes,_,_).
+Name1 = phalanx,
+Name2 = quadratus ;
+false.
+
+7 ?- foughtBefore(quadratus,valus).
+true.
+
+9 ?- foughtBefore(phalanx,Name).
+Name = valus ;
+Name = quadratus ;
+false.
+
+12 ?- isTallerThan(quadratus,valus).
+false.
+
+10 ?- tallest(Name).
+Name = phalanx ;
+false.

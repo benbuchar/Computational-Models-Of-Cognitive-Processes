@@ -1,0 +1,43 @@
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 7.2.3)
+Copyright (c) 1990-2015 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+1 ?- consult('c:/users/ben/prolog/gv.pro').
+true.
+
+2 ?- declare(pitch,c).
+true.
+
+3 ?- declare(duration,l).
+true.
+
+4 ?- declare(fruit,apple).
+true.
+
+5 ?- displayBindings.
+pitch -> c
+duration -> l
+fruit -> apple
+true.
+
+6 ?- valueOf(pitch,P).
+P = c.
+
+7 ?- valueOf(duration,D).
+D = l.
+
+8 ?- valueOf(fruit,F).
+F = apple.
+
+9 ?- bind(fruit,banana).
+true.
+
+10 ?- displayBindings.
+pitch -> c
+duration -> l
+fruit -> banana
+true.

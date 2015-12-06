@@ -1,0 +1,56 @@
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 7.2.3)
+Copyright (c) 1990-2015 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+1 ?- consult('C:/users/ben/prolog/v3/crypto.pro').
+true.
+
+2 ?- crypto(3,6,4,6,3,Expression).
+Expression = ex(ex(ex(3, *, 6), -, 6), /, 4) ;
+Expression = ex(ex(6, *, ex(6, /, 3)), /, 4) ;
+Expression = ex(6, /, ex(4, -, ex(6, /, 3))) ;
+Expression = ex(6, /, ex(4, /, ex(6, /, 3))) ;
+Expression = ex(ex(6, *, 6), /, ex(3, *, 4)) .
+
+3 ?- crypto(4,7,2,4,8,Expression).
+Expression = ex(ex(7, +, 2), -, ex(4, /, 4)) ;
+Expression = ex(7, +, ex(2, -, ex(4, /, 4))) ;
+Expression = ex(7, -, ex(ex(4, /, 4), -, 2)) ;
+Expression = ex(2, +, ex(7, -, ex(4, /, 4))) ;
+Expression = ex(2, -, ex(ex(4, /, 4), -, 7)) ;
+Expression = ex(ex(7, +, 2), -, ex(4, /, 4)) ;
+Expression = ex(7, +, ex(2, -, ex(4, /, 4))) .
+
+4 ?- crypto(2,8,5,9,1,Expression).
+Expression = ex(ex(9, -, 5), /, ex(8, /, 2)) ;
+Expression = ex(ex(8, /, 2), /, ex(9, -, 5)) ;
+Expression = ex(ex(9, -, 5), /, ex(8, /, 2)) ;
+Expression = ex(ex(8, /, 2), /, ex(9, -, 5)) ;
+Expression = ex(ex(9, -, ex(8, /, 2)), /, 5) ;
+Expression = ex(5, /, ex(9, -, ex(8, /, 2))) .
+
+5 ?- crypto(9,3,5,6,3,Expression).
+Expression = ex(5, -, ex(ex(9, +, 3), /, 6)) ;
+Expression = ex(ex(5, *, 6), -, ex(9, *, 3)) ;
+Expression = ex(ex(9, /, 3), *, ex(6, -, 5)) ;
+Expression = ex(ex(9, /, 3), /, ex(6, -, 5)) ;
+Expression = ex(5, -, ex(6, /, ex(9, /, 3))) ;
+Expression = ex(6, /, ex(5, -, ex(9, /, 3))) ;
+Expression = ex(ex(6, *, ex(5, -, 3)), -, 9) ;
+Expression = ex(9, /, ex(6, /, ex(5, -, 3))) ;
+Expression = ex(ex(9, *, ex(5, -, 3)), /, 6) ;
+Expression = ex(5, -, ex(ex(3, *, 6), /, 9)) ;
+Expression = ex(9, /, ex(5, -, ex(6, /, 3))) ;
+Expression = ex(ex(5, *, 6), -, ex(9, *, 3)) ;
+Expression = ex(ex(ex(5, *, 6), -, 3), /, 9) ;
+Expression = ex(ex(6, -, 5), *, ex(9, /, 3)) ;
+Expression = ex(ex(9, /, 3), /, ex(6, -, 5)) ;
+Expression = ex(9, /, ex(3, *, ex(6, -, 5))) ;
+Expression = ex(9, /, ex(3, /, ex(6, -, 5))) ;
+Expression = ex(ex(9, *, ex(6, -, 5)), /, 3) ;
+Expression = ex(ex(9, /, ex(6, -, 5)), /, 3) ;
+false.

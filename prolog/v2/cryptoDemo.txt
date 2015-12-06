@@ -1,0 +1,116 @@
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 7.2.3)
+Copyright (c) 1990-2015 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+1 ?- consult('C:/users/ben/prolog/v2/crypto.pro').
+true.
+
+2 ?- crypto(1,4,5,Expression).
+Expression = ex(1, +, 4) ;
+false.
+
+3 ?- crypto(1,4,4,Expression).
+Expression = ex(1, *, 4) .
+
+4 ?- crypto(2,4,8,Expression).
+Expression = ex(2, *, 4) .
+
+5 ?- crypto(1,3,5,9,Expression).
+Expression = ex(5, +, ex(1, +, 3)) ;
+Expression = ex(1, +, ex(3, +, 5)) ;
+Expression = ex(3, +, ex(1, +, 5)) ;
+false.
+
+6 ?- crypto(1,3,3,9,Expression).
+Expression = ex(ex(1, *, 3), *, 3) ;
+Expression = ex(3, *, ex(1, *, 3)) ;
+Expression = ex(ex(3, /, 1), *, 3) ;
+Expression = ex(3, *, ex(3, /, 1)) ;
+Expression = ex(1, *, ex(3, *, 3)) ;
+Expression = ex(ex(3, *, 3), /, 1) ;
+Expression = ex(ex(1, *, 3), *, 3) ;
+Expression = ex(3, *, ex(1, *, 3)) ;
+Expression = ex(ex(3, /, 1), *, 3) ;
+Expression = ex(3, *, ex(3, /, 1)) ;
+false.
+
+7 ?- crypto(4,2,3,7,Expression).
+false.
+
+8 ?- crypto(2,5,1,4,Expression).
+Expression = ex(1, -, ex(2, -, 5)) ;
+Expression = ex(1, +, ex(5, -, 2)) ;
+Expression = ex(ex(5, +, 1), -, 2) ;
+Expression = ex(5, -, ex(2, -, 1)) ;
+Expression = ex(5, +, ex(1, -, 2)) ;
+false.
+
+9 ?- crypto(2,4,6,3,7,Expression).
+Expression = ex(ex(2, -, 4), +, ex(6, +, 3)) ;
+Expression = ex(6, +, ex(3, +, ex(2, -, 4))) ;
+Expression = ex(3, +, ex(6, +, ex(2, -, 4))) ;
+Expression = ex(ex(6, +, 3), -, ex(4, -, 2)) ;
+Expression = ex(6, +, ex(3, -, ex(4, -, 2))) ;
+Expression = ex(6, -, ex(ex(4, -, 2), -, 3)) ;
+Expression = ex(3, +, ex(6, -, ex(4, -, 2))) ;
+Expression = ex(3, -, ex(ex(4, -, 2), -, 6)) ;
+Expression = ex(ex(6, +, 3), -, ex(4, /, 2)) ;
+Expression = ex(6, +, ex(3, -, ex(4, /, 2))) ;
+Expression = ex(6, -, ex(ex(4, /, 2), -, 3)) ;
+Expression = ex(3, +, ex(6, -, ex(4, /, 2))) ;
+Expression = ex(3, -, ex(ex(4, /, 2), -, 6)) ;
+Expression = ex(ex(2, +, 6), -, ex(4, -, 3)) ;
+Expression = ex(ex(2, +, 6), +, ex(3, -, 4)) ;
+Expression = ex(ex(3, +, ex(2, +, 6)), -, 4) ;
+Expression = ex(3, -, ex(4, -, ex(2, +, 6))) ;
+Expression = ex(3, +, ex(ex(2, +, 6), -, 4)) ;
+Expression = ex(ex(2, +, 3), -, ex(4, -, 6)) ;
+Expression = ex(ex(2, +, 3), +, ex(6, -, 4)) ;
+Expression = ex(ex(6, +, ex(2, +, 3)), -, 4) ;
+Expression = ex(6, -, ex(4, -, ex(2, +, 3))) ;
+Expression = ex(6, +, ex(ex(2, +, 3), -, 4)) ;
+Expression = ex(ex(2, +, 3), -, ex(4, -, 6)) ;
+Expression = ex(2, +, ex(3, -, ex(4, -, 6))) ;
+Expression = ex(2, -, ex(ex(4, -, 6), -, 3)) ;
+Expression = ex(3, -, ex(2, *, ex(4, -, 6))) ;
+Expression = ex(3, +, ex(2, -, ex(4, -, 6))) ;
+Expression = ex(3, -, ex(ex(4, -, 6), -, 2)) ;
+Expression = ex(ex(6, -, 4), +, ex(2, +, 3)) ;
+Expression = ex(2, +, ex(ex(6, -, 4), +, 3)) ;
+Expression = ex(ex(6, -, 4), +, ex(3, +, 2)) ;
+Expression = ex(2, +, ex(3, +, ex(6, -, 4))) ;
+Expression = ex(3, +, ex(ex(6, -, 4), +, 2)) ;
+Expression = ex(3, +, ex(2, +, ex(6, -, 4))) ;
+Expression = ex(3, +, ex(ex(6, -, 4), *, 2)) ;
+Expression = ex(3, +, ex(2, *, ex(6, -, 4))) ;
+Expression = ex(ex(2, +, 6), -, ex(4, -, 3)) ;
+Expression = ex(2, +, ex(6, -, ex(4, -, 3))) ;
+Expression = ex(2, -, ex(ex(4, -, 3), -, 6)) ;
+Expression = ex(6, +, ex(2, -, ex(4, -, 3))) ;
+Expression = ex(6, -, ex(ex(4, -, 3), -, 2)) ;
+Expression = ex(ex(3, -, 4), +, ex(2, +, 6)) ;
+Expression = ex(2, +, ex(6, +, ex(3, -, 4))) ;
+Expression = ex(6, +, ex(2, +, ex(3, -, 4))) ;
+Expression = ex(ex(6, +, 3), +, ex(2, -, 4)) ;
+Expression = ex(ex(6, +, 3), -, ex(4, -, 2)) ;
+Expression = ex(ex(6, +, 3), -, ex(4, /, 2)) ;
+Expression = ex(2, -, ex(4, -, ex(6, +, 3))) ;
+Expression = ex(2, +, ex(ex(6, +, 3), -, 4)) ;
+Expression = ex(ex(2, +, ex(6, +, 3)), -, 4) ;
+Expression = ex(ex(ex(6, *, 3), -, 4), /, 2) ;
+false.
+
+10 ?- crypto(3,5,2,5,3,Expression).
+Expression = ex(3, +, ex(2, *, ex(5, -, 5))) ;
+Expression = ex(3, -, ex(2, *, ex(5, -, 5))) ;
+Expression = ex(3, +, ex(ex(5, -, 5), /, 2)) .
+
+11 ?- crypto(2,6,8,3,5,Expression).
+Expression = ex(3, +, ex(8, /, ex(6, -, 2))) ;
+Expression = ex(ex(2, +, 8), /, ex(6, /, 3)) ;
+Expression = ex(ex(3, *, ex(2, +, 8)), /, 6) ;
+Expression = ex(ex(6, +, 3), -, ex(8, /, 2)) .

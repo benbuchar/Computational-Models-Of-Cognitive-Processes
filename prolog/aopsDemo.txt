@@ -1,0 +1,58 @@
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 7.2.3)
+Copyright (c) 1990-2015 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+1 ?- consult('C:/users/ben/prolog/aops.pro').
+true.
+
+2 ?- declare(x,6).
+true.
+
+3 ?- declare(y,2).
+true.
+
+4 ?- add(x,y,Result).
+Result = 8.
+
+5 ?- sub(x,y,Result).
+Result = 4.
+
+6 ?- sub(y,x,Result).
+Result = -4.
+
+7 ?- mul(x,y,Result).
+Result = 12.
+
+8 ?- declare(z,3).
+true.
+
+9 ?- mul(x,z,Result).
+Result = 18.
+
+10 ?- div(x,y,Result).
+Result = 3.
+
+11 ?- pow(x,z,Result).
+Result = 216.
+
+12 ?- pow(z,y,Result).
+Result = 9.
+
+13 ?- displayBindings.
+x -> 6
+y -> 2
+z -> 3
+true.
+
+14 ?- prepend(x,2).
+true.
+
+15 ?- displayBindings.
+y -> 2
+z -> 3
+x -> [2|6]
+true.

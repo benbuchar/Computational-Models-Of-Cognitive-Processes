@@ -1,0 +1,63 @@
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 7.2.3)
+Copyright (c) 1990-2015 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+1 ?- consult('c:/users/ben/prolog/proglang.pro').
+true.
+
+2 ?- language(snobol).
+true.
+
+3 ?- language(snowball).
+false.
+
+4 ?- essence(snobol,DT,_).
+DT = pattern.
+
+5 ?- language(Language),write(Language),nl,fail.
+smalltalk
+lisp
+prolog
+snobol
+apl
+false.
+
+6 ?- language(X).
+X = smalltalk ;
+X = lisp ;
+X = prolog ;
+X = snobol ;
+X = apl.
+
+7 ?- history(apl,name(Name),_).
+false.
+
+8 ?- history(apl,inventor(Name),_).
+Name = 'Kenneth Iverson'.
+
+9 ?- history(_,inventor(Inventor),_),write(Inventor),nl,fail.
+Alan Kay
+John McCarthy
+Alan Colmeraur
+Ralph Griswold
+Kenneth Iverson
+false.
+
+10 ?- history(_inventor(I),_).
+ERROR: Syntax error: Operator expected
+ERROR: history(_invento
+ERROR: ** here **
+ERROR: r(I),_) . 
+10 ?- history(_,inventor(I),_).
+I = 'Alan Kay' ;
+I = 'John McCarthy' ;
+I = 'Alan Colmeraur' ;
+I = 'Ralph Griswold' ;
+I = 'Kenneth Iverson'.
+
+11 ?- history(X,_,date(1959)),essence(X,lists,_).
+X = lisp .
